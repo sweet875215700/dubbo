@@ -5,8 +5,9 @@
     <artifactId>dubbo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>dubbo-consumer</artifactId>  
-  <dependencies>
+  <artifactId>dubbo-consumer</artifactId> 
+  <packaging>war</packaging> 
+  <dependencies>  
 		<dependency>
 			<groupId>com.hotbody</groupId>
 			<artifactId>dubbo-api</artifactId>
