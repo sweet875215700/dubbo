@@ -10,8 +10,7 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			<!--classpath*:/applicationContext*.xml,-->
-			classpath*:/applicationContext-dubbo.xml
+			classpath*:applicationContext-dubbo.xml
 		</param-value>
 	</context-param>
 	
@@ -58,10 +57,14 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<!--<param-value>/WEB-INF/classes/applicationContext-mvc.xml</param-value>-->
-			<param-value>classpath:/applicationContext-mvc.xml</param-value>
+			<param-value>classpath:applicationContext-mvc.xml</param-value>
 		</init-param>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
+	<servlet-mapping>
+		<servlet-name>springMvc</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
 	
 	<!-- 这里设置为对所有请求者后缀名为.jhtml的请求进行拦截 -->
 	<servlet-mapping>

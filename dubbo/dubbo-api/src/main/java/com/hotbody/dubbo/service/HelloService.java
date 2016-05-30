@@ -1,4 +1,4 @@
-package com.hotbody.duboo.service;
+package com.hotbody.dubbo.service;
 
 public interface HelloService {
 

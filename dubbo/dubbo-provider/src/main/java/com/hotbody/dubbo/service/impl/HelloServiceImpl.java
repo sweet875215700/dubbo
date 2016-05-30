@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.alibaba.dubbo.rpc.RpcContext;
-import com.hotbody.duboo.service.HelloService;
+import com.hotbody.dubbo.service.HelloService;
 
 public class HelloServiceImpl implements HelloService{
 

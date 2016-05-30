@@ -6,44 +6,20 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-    <!-- 自动添加注解驱动 ,包括了验证validator-->
-	<mvc:annotation-driven validator="validator" />
-
+   
+    
 	<!-- 默认自动扫描且只扫描@Controller -->
 	<!--  <context:annotation-config />-->
 	<context:component-scan base-package="com.hotbody" />
-
+    <mvc:annotation-driven />  
+    
 	<!--  <mvc:default-servlet-handler />-->
 
 	<!-- 定义跳转的文件的前后缀，视图解释类 通过配置文件，把一个视图名交给到一个View来处理 InternalResourceViewResolver加入了JSTL的支持 -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/" />
-		<property name="suffix" value=".jsp" />
+		<property name="suffix" value="" />
 		<property name="order" value="1" />
 	</bean>
-	
-	<bean id="exceptionResolver" class="com.pro.resolver.MyExceptionResolver"></bean>
-	
-	<!-- 默认的注解映射的支持 -->
-	<!-- 有了它，就不需要显式的配置DefaultAnnotationHandlerMapping和AnnotationMethodHandlerAdapter了 -->
-	<mvc:annotation-driven>
-		<mvc:message-converters register-defaults="true">
-			<!-- 将StringHttpMessageConverter的默认编码设为UTF-8 -->
-			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
-				<constructor-arg value="UTF-8" />
-			</bean>
-			<!-- 将Jackson2HttpMessageConverter的默认格式化输出设为true -->
-			<bean
-				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
-				<property name="prettyPrint" value="true" />
-			</bean>
-		</mvc:message-converters>
-	</mvc:annotation-driven>
-
-	<!-- 静态资源访问处理
-	<mvc:resources mapping="/css/**" location="/static/css/" />
-	<mvc:resources mapping="/js/**" location="/static/js/" />
-	<mvc:resources mapping="/images/**" location="/static/images/" />
-	-->
 </beans>

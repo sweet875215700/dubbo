@@ -8,7 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.hotbody.duboo.service.HelloService;
+import com.hotbody.dubbo.service.HelloService;
 
 @Controller
 public class ConsumerController {
@@ -16,13 +16,13 @@ public class ConsumerController {
 	@Resource(name = "helloService")
 	private HelloService helloService;
 	
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	@RequestMapping("/index.do")
 	public String index(HttpServletRequest request, ModelMap model) {
 		
 		String name = helloService.sayHello("hello word!!");
 		System.out.println("结果: " + name);
 		model.addAttribute("name", name);
-		return "/index";
+		return "/index.jsp";
 	}
 
 }

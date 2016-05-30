@@ -3,7 +3,7 @@ package com.hotbody.dubbo.consumer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.hotbody.duboo.service.HelloService;
+import com.hotbody.dubbo.service.HelloService;
 
 public class consumerAction {
 	
